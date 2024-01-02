@@ -1,3 +1,6 @@
 simulation must be pausable
 planning: flowchart
 GUI: put button, write its functionality, later -maybe- work on its design
+
+sign up test:
+

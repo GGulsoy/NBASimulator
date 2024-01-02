@@ -15,7 +15,7 @@ public abstract class NBAFrame extends JFrame{
 	 * has User loggedUser variable which can be null
 	 * 	or can be logged user
 	 */
-	User loggedUser = null;
+	static User loggedUser = null;
 
 	
 	/**
