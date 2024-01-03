@@ -47,7 +47,9 @@ public class Player {
 			return abbreviation;
 		}
 	}
-	
+	/**
+	 * 
+	 */
 	protected enum PlayerPositionKind {
 	    PG(new double[]{0.25, 0.05, 0.3, 0.05, 0.35}),//POINT_GUARD
 	    SG(new double[]{0.3, 0.1, 0.2, 0.05, 0.35}),//SHOOTING_GUARD
@@ -98,7 +100,7 @@ public class Player {
 	
 	
 	/**
-	 * Heders of the CSV file is abbreviations(see enums @PlayerScoreKind and @PlayerPositionKind)
+	 * Headers of the CSV file is abbreviations(see enums @PlayerScoreKind and @PlayerPositionKind)
 	 * @return list
 	 * @throws IOException
 	 */

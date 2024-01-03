@@ -75,7 +75,7 @@ public class UserInformation extends NBAFrame {
 		lblEmail_1.setBounds(86, 232, 338, 29);
 		getContentPane().add(lblEmail_1);
 		
-		JLabel lblEmail_3 = new JLabel("E-Mail");
+		JLabel lblEmail_3 = new JLabel("E-Mail:");
 		lblEmail_3.setBounds(10, 304, 72, 29);
 		getContentPane().add(lblEmail_3);
 		
@@ -168,6 +168,17 @@ public class UserInformation extends NBAFrame {
 		});
 		btnChangeTheEmail.setBounds(10, 344, 166, 23);
 		getContentPane().add(btnChangeTheEmail);
+		
+		JButton btnNewButton_1 = new JButton("Back to Main Menu");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				mainFrame frame = new mainFrame(loggedUser);
+				frame.setVisible(true);
+				close();
+			}
+		});
+		btnNewButton_1.setBounds(26, 555, 150, 23);
+		getContentPane().add(btnNewButton_1);
 		// TODO Auto-generated constructor stub
 		
 	}

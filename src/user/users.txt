@@ -1,1 +1,3 @@
 gokku5885;gokku5885;Göktuğ;Gülsoy;17;ggulsoy21@ku.edu.tr;src/photos/default.png
+slmn;slmn1010;Salman;Farisi;20;slmnfrs@gmail.com;src\photos\slmn.png
+theOghuz;1908ttk1923;Reha Nihal;Kanıakar;30;reha_kaniakar@outlook.com.tr;src\photos\theOghuz.jpg

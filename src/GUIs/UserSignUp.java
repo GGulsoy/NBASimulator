@@ -182,19 +182,17 @@ public class UserSignUp extends NBAFrame {
 						
 						//if there is new photo, it is saved at src/photos based on nickname and file format
 						if(!holdedImagePathName.equals("src/photos/default.png")) {
-		                	// Specify the destination directory (change this to your desired destination)
-		                    String destinationDirectory = "src/photos";
+
+							String destinationDirectory = "src/photos";
 		                    File destinationDir = new File(destinationDirectory);
-		                    // Ensure the destination directory exists
+
 		                    if (!destinationDir.exists()) {
 		                        destinationDir.mkdirs();
 		                    }
-		                    // Construct the destination path
 		                    int pointIndex = holdedImagePathName.lastIndexOf(".");
 		                    String newName = String.format("%s%s", user.getNickname(), holdedImagePathName.substring(pointIndex));
 		                    Path destinationPath = destinationDir.toPath().resolve(newName);
 		                    
-		                    // Perform the file copy
 		                    Files.copy(new File(holdedImagePathName).toPath(), destinationPath, StandardCopyOption.REPLACE_EXISTING);
 		                    int lastIndex = destinationPath.toString().indexOf("/src/");
 		                    String setter = destinationPath.toString().substring(lastIndex+1);
@@ -210,6 +208,7 @@ public class UserSignUp extends NBAFrame {
 					}
 					catch(Exception excep) {
 						JOptionPane.showMessageDialog(null, excep.getMessage(),"Attention", JOptionPane.ERROR_MESSAGE);
+						excep.printStackTrace();
 					}
 				} else {
 					JOptionPane.showMessageDialog(null, "Please confirm your password by entering the same password.","Attention", JOptionPane.ERROR_MESSAGE);
@@ -259,6 +258,7 @@ public class UserSignUp extends NBAFrame {
 				}
 				catch(Exception excep) {
 					JOptionPane.showMessageDialog(null, excep.getMessage(),"Attention", JOptionPane.ERROR_MESSAGE);
+					excep.printStackTrace();
 				}
 			}
 		});
@@ -295,7 +295,8 @@ public class UserSignUp extends NBAFrame {
 	
 	private void saveImage() {
 		ImageIcon initial = new ImageIcon(holdedImagePathName);
-		Image image = initial.getImage().getScaledInstance(imageLabel.getWidth(), imageLabel.getHeight(), Image.SCALE_DEFAULT);
+		Image image = initial.getImage()
+				.getScaledInstance(89, 87, Image.SCALE_DEFAULT);
 		ImageIcon finalIcon = new ImageIcon(image);
 		imageLabel.setIcon(finalIcon);
 	}

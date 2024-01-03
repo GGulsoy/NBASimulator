@@ -67,6 +67,14 @@ public class mainFrame extends NBAFrame {
 		btnPlay.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(loggedUser == null) {
+					JOptionPane.showMessageDialog(null, "Please log in to access user information", "Attention", JOptionPane.ERROR_MESSAGE);
+				}
+				else {
+					Drafting frame = new Drafting(loggedUser);
+					frame.setVisible(true);
+					close();
+				}
 			}
 		});
 		btnPlay.setBounds(57, 87, 291, 48);
@@ -104,7 +112,11 @@ public class mainFrame extends NBAFrame {
 				if(loggedUser == null) {
 					JOptionPane.showMessageDialog(null, "Please log in to access user information", "Attention", JOptionPane.ERROR_MESSAGE);
 				}
-				else {}
+				else {
+					UserInformation frame = new UserInformation(loggedUser);
+					frame.setVisible(true);
+					close();
+				}
 			}
 		});
 		btnViewUserInformation.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -121,7 +133,8 @@ public class mainFrame extends NBAFrame {
 		});
 		btnExitFromProfile.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnExitFromProfile.setBounds(57, 323, 291, 48);
-		getContentPane().add(btnExitFromProfile);
+		if(loggedUser != null) {getContentPane().add(btnExitFromProfile);}
+		
 		
 	}
 
